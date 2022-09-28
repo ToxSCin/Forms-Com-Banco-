@@ -16,5 +16,10 @@ namespace _211073
         {
             InitializeComponent();
         }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
