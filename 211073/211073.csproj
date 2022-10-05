@@ -99,11 +99,11 @@
     <Compile Include="Models\Cidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Frm.Cidade.cs">
+    <Compile Include="Views\FrmCidade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Frm.Cidade.Designer.cs">
-      <DependentUpon>Frm.Cidade.cs</DependentUpon>
+    <Compile Include="Views\FrmCidade.Designer.cs">
+      <DependentUpon>FrmCidade.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -117,8 +117,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Frm.Cidade.resx">
-      <DependentUpon>Frm.Cidade.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmCidade.resx">
+      <DependentUpon>FrmCidade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

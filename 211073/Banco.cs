@@ -51,7 +51,7 @@ namespace _211073
             try
             {
                 AbrirConexao();
-                Comando = new MySqlCommand("CREATE DATABASE IF NOT EXIST vendas, USE venda;" + "CREATE TABLE IF NOT EXIST cidades(id integer auto_increment primary key, nome varchar(40)," + "uf char(02))", Conexao);
+                Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;" + "CREATE TABLE IF NOT EXISTS cidades(id integer auto_increment primary key, nome varchar(40)," + "uf char(02))", Conexao);
                 Comando.ExecuteNonQuery();
             }
             catch (Exception e)
