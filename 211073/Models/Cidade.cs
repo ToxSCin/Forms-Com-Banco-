@@ -61,10 +61,10 @@ namespace _211073.Models
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("INSERT INTO cidades (nome, uf) VALUES (@nome, @uf)", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("delete from cidades where id = @id", Banco.Conexao);
 
-                Banco.Comando.Parameters.AddWithValue("@nome", nome);
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
+                
+                Banco.Comando.Parameters.AddWithValue("@id", Id);
 
 
                 Banco.Comando.ExecuteNonQuery();
