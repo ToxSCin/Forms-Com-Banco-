@@ -61,12 +61,8 @@ namespace _211073.Models
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("delete from cidades where id = @id", Banco.Conexao);
-
-                
+                Banco.Comando = new MySqlCommand("delete from cidades where id = @id", Banco.Conexao); 
                 Banco.Comando.Parameters.AddWithValue("@id", Id);
-
-
                 Banco.Comando.ExecuteNonQuery();
 
                 Banco.FecharConexao();
@@ -87,9 +83,6 @@ namespace _211073.Models
                 Banco.datTabela = new DataTable();
                 Banco.Adaptador.Fill(Banco.datTabela);
 
-
-
-
                 Banco.FecharConexao();
                 return Banco.datTabela;
             }
@@ -99,9 +92,5 @@ namespace _211073.Models
                 return null;
             }
         }
-
-
-
-
     }
 }
