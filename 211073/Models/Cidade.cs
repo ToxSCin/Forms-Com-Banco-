@@ -80,11 +80,11 @@ namespace _211073.Models
                 Banco.AbrirConexao();
                 Banco.Comando = new MySqlCommand("SELECT * FROM Cidades where nome likes @Nome " + "order by nome", Banco.Conexao);        
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
-                Banco.datTabela = new DataTable();
-                Banco.Adaptador.Fill(Banco.datTabela);
+                Banco.dataTabela = new DataTable();
+                Banco.Adaptador.Fill(Banco.dataTabela);
 
                 Banco.FecharConexao();
-                return Banco.datTabela;
+                return Banco.dataTabela;
             }
             catch (Exception e)
             {

@@ -11,34 +11,37 @@ namespace _211073
 {
     public class Banco
     {
-        // Criando As Variaveis Publicas para conexção
+        //Connection responsável pela conexão com o MySQL
         public static MySqlConnection Conexao;
-        // Command Responsalvel pela instruções Sql
+        //Command responsável pelas instruções SQL a serem executadas
         public static MySqlCommand Comando;
-        // Adapter liga os controles do banco de dados
+        //Adapter responsável por inserir dados em um dataTable
         public static MySqlDataAdapter Adaptador;
-        // Liga Banco Com DataSource
-        public static DataTable datTabela;
-
-
-
+        //DataTable responsável por ligar o banco de dados em controles com a propriedade DataSource
+        public static DataTable dataTabela;
 
         public static void AbrirConexao()
         {
             try
             {
+                //Estabelece os parâmetros para a conexão com o banco de dados
                 Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+
+                //Abre a conexão com o banco de dados
                 Conexao.Open();
+
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public static void FecharConexao()
         {
             try
             {
+                //Fecha a conexão com o banco de dados
                 Conexao.Close();
             }
             catch (Exception e)
@@ -46,19 +49,56 @@ namespace _211073
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public static void CriarBanco()
         {
             try
             {
+                //Chama a função para a abertura de conexão com o banco
                 AbrirConexao();
-                Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;" + "CREATE TABLE IF NOT EXISTS cidades(id integer auto_increment primary key, nome varchar(40)," + "uf char(02))", Conexao);
+
+                //Informa a instrução SQL
+                Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;", Conexao);
+                //Executa a Query no MySQL (Raio do Workbench)
                 Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS cidades" +
+                    "(id integer auto_increment primary key, " +
+                    "nome char(45), " +
+                    "uf char(02)) ", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS marcas" +
+                    "(id integer auto_increment primary key, " +
+                    "marca char(45)) ", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS categorias" +
+                    "(id integer auto_increment primary key, " +
+                    "descricao char(45)) ", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS clientes" +
+                    "(id integer auto_increment primary key, " +
+                    "nome char(45)), " +
+                    "idCidade integer, " +
+                    "dataNasc date," +
+                    "renda decimal(10,2), " +
+                    "cpf char(14), " +
+                    "foto varchar(100), " +
+                    "venda boolean)", Conexao);
+                Comando.ExecuteNonQuery();
+
+
+
+                //Chama a função para o fechamento de conexão com o banco
+                FecharConexao();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
-
