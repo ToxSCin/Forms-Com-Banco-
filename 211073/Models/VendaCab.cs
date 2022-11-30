@@ -2,21 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-using Xamarin.Forms;
-
-namespace _211073.Models
+namespace _211080.Models
 {
-    public class VendaCab : ContentPage
+    internal class VendaCab
     {
-        public VendaCab()
-        {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
-            };
-        }
     }
 }

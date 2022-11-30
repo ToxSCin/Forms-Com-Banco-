@@ -100,7 +100,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\VendaCab.cs" />
-    <Compile Include="Models\VendaDat.cs" />
+    <Compile Include="Models\VendaDet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\FrmCaixa.cs">

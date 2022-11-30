@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _211073
+namespace _211073.Models
 {
-    internal class Consulta
+    internal class VendaDet
     {
     }
 }
