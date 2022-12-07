@@ -17,6 +17,9 @@ namespace _211073.Views
             InitializeComponent();
         }
 
-        
+        private void FrmClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
